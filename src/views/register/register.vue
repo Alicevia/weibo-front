@@ -14,7 +14,7 @@
         <n-input v-model:value="formState.data.password"></n-input>
       </n-form-item>
       <n-form-item>
-        <n-button class="w-full" @click="formState.onSubmit">登录</n-button>
+        <n-button class="w-full" @click="formState.onSubmit">注册</n-button>
       </n-form-item>
     </n-form>
   </div>
@@ -23,7 +23,7 @@
 <script setup>
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
-import { login } from '../../api/user'
+import { registerUser } from '../../api/user'
 
 const router = useRouter()
 const formRef = ref()
@@ -50,10 +50,10 @@ const formState = reactive({
     e.preventDefault()
     formRef.value.validate(async (errors) => {
       if (!errors) {
-        await login({
+        await registerUser({
           data: formState.data,
         }).then(() => {
-          router.push('/')
+          router.push('/login')
         })
       } else {
         console.log(errors)
