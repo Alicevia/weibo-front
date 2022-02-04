@@ -25,4 +25,23 @@ module.exports = {
     'vue/multi-word-component-names': 0,
     'vue/no-v-model-argument': 0,
   },
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [
+          ['@', './src'],
+          ['views', './src/views'],
+        ],
+        extensions: ['.js', '.jsx'],
+      },
+    },
+  },
+  globals: {
+    $message: true,
+    __dirname: true,
+    process: true,
+    defineProps: true,
+    defineEmits: true,
+    defineExpose: true,
+  },
 }

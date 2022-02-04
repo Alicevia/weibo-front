@@ -12,3 +12,9 @@ export const login = (config) =>
     method: 'post',
     ...config,
   })
+
+export const getUserInfo = () =>
+  request({
+    url: '/user/userInfo',
+    method: 'get',
+  })
