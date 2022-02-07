@@ -18,3 +18,10 @@ export const getUserInfo = () =>
     url: '/user/userInfo',
     method: 'get',
   })
+
+export const changeUserInfo = (config) =>
+  request({
+    url: '/user/changeUserInfo',
+    method: 'patch',
+    ...config,
+  })

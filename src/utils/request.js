@@ -33,7 +33,9 @@ service.interceptors.response.use(
       }
       return data
     }
-    $message.error(message)
+    if (message) {
+      $message.error(message)
+    }
     return Promise.reject(response)
   },
   (error) => {
