@@ -1,5 +1,6 @@
 import axios from 'axios'
 import config from '../config'
+import router from '../router/index'
 
 const service = axios.create({
   timeout: 15000,
@@ -35,6 +36,9 @@ service.interceptors.response.use(
     }
     if (message) {
       $message.error(message)
+    }
+    if (code === 10005) {
+      router.push('/login')
     }
     return Promise.reject(response)
   },

@@ -25,3 +25,10 @@ export const changeUserInfo = (config) =>
     method: 'patch',
     ...config,
   })
+
+export const changePassword = (config) =>
+  request({
+    url: '/user/changePassword',
+    method: 'patch',
+    ...config,
+  })
