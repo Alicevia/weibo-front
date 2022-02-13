@@ -32,3 +32,9 @@ export const changePassword = (config) =>
     method: 'patch',
     ...config,
   })
+
+export const logout = () =>
+  request({
+    url: '/user/logout',
+    method: 'post',
+  })
