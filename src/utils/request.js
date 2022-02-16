@@ -19,7 +19,6 @@ service.interceptors.request.use(
     return cfg
   },
   (err) => {
-    console.dir(err, 'configerr')
     return Promise.reject(err)
   }
 )
