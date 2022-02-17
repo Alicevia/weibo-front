@@ -4,10 +4,6 @@ const router = new CreateRouter({
   history: createWebHistory(),
   routes: [
     {
-      path: '/',
-      component: () => import('views/home/home.vue'),
-    },
-    {
       path: '/login',
       component: () => import('views/login/login.vue'),
     },
@@ -16,8 +12,22 @@ const router = new CreateRouter({
       component: () => import('views/register/register.vue'),
     },
     {
-      path: '/setting',
-      component: () => import('views/setting/setting.vue'),
+      path: '/',
+      component: () => import('@/layout/baseLayout.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import('views/home/home.vue'),
+        },
+        {
+          path: '/setting',
+          component: () => import('views/setting/setting.vue'),
+        },
+        {
+          path: '/profile/:userName',
+          component: () => import('views/profile/profile.vue'),
+        },
+      ],
     },
   ],
 })

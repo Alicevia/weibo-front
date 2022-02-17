@@ -6,3 +6,9 @@ export const createWeiBo = (config) =>
     method: 'post',
     ...config,
   })
+export const getBlogList = (config) =>
+  request({
+    url: '/blog/blogList',
+    method: 'get',
+    ...config,
+  })
